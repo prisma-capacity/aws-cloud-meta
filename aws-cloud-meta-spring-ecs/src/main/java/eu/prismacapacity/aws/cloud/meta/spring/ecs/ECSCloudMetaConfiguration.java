@@ -15,6 +15,7 @@
  */
 package eu.prismacapacity.aws.cloud.meta.spring.ecs;
 
+import eu.prismacapacity.aws.cloud.meta.core.ecs.ContainerMetaData;
 import lombok.NonNull;
 import okhttp3.OkHttpClient;
 
@@ -38,5 +39,11 @@ public class ECSCloudMetaConfiguration {
 	TaskMetaData taskMetaData(@NonNull ECSMetaDataReader metaDataReader) {
 		return metaDataReader.readTaskMetaData()
 				.orElseThrow(() -> new IllegalStateException("Couldn't load ECS task meta data"));
+	}
+
+	@Bean
+	ContainerMetaData containerMetaData(@NonNull ECSMetaDataReader metaDataReader) {
+		return metaDataReader.readContainerMetaData()
+				.orElseThrow(() -> new IllegalStateException("Couldn't load ECS container meta data"));
 	}
 }
