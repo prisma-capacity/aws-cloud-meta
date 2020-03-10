@@ -33,19 +33,18 @@ import eu.prismacapacity.aws.cloud.meta.core.ecs.TaskMetaData;
 @Slf4j
 @AllArgsConstructor
 public class ECSMetaDataReader {
-	static String ECS_CONTAINER_ENDPOINT_URL = "http://169.254.170.2/v2/metadata";
-	static String ECS_TASK_ENDPOINT_URL = "http://169.254.170.2/v2/metadata/task";
+	private final String containerMetaDataUri;
 
 	private final OkHttpClient client;
 
 	private final ObjectMapper objectMapper;
 
 	public Optional<TaskMetaData> readTaskMetaData() {
-		return read(ECS_TASK_ENDPOINT_URL, TaskMetaData.class);
+		return read(containerMetaDataUri + "/task", TaskMetaData.class);
 	}
 
 	public Optional<ContainerMetaData> readContainerMetaData() {
-		return read(ECS_CONTAINER_ENDPOINT_URL, ContainerMetaData.class);
+		return read(containerMetaDataUri, ContainerMetaData.class);
 	}
 
 	private <T> Optional<T> read(@NonNull String url, Class<T> target) {
@@ -53,6 +52,7 @@ public class ECSMetaDataReader {
 
 		try (val response = client.newCall(request).execute()) {
 			if (!response.isSuccessful()) {
+				log.error("Couldn't fetch task meta data: {}", response.message());
 				return Optional.empty();
 			}
 
@@ -60,7 +60,6 @@ public class ECSMetaDataReader {
 
 			return Optional.of(result);
 		} catch (IOException ex) {
-			log.info("foo");
 			log.error("Couldn't fetch task meta data", ex);
 
 			return Optional.empty();

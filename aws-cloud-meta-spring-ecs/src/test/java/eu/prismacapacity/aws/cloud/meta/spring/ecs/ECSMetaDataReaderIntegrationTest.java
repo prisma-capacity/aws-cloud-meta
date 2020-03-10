@@ -15,17 +15,18 @@ public class ECSMetaDataReaderIntegrationTest {
     @Test
     void testReadTaskMetaData()  {
         val interceptor = new MockInterceptor();
+        val url = "http://example.com";
 
         interceptor
                 .addRule()
-                .get(ECSMetaDataReader.ECS_TASK_ENDPOINT_URL)
+                .get(url + "/task")
                 .respond(TASK_RESPONSE);
 
         val client = new OkHttpClient.Builder()
                 .addInterceptor(interceptor)
                 .build();
 
-        val uut = new ECSMetaDataReader(client, new ObjectMapper());
+        val uut = new ECSMetaDataReader(url, client, new ObjectMapper());
 
         val result = uut.readTaskMetaData();
 
@@ -36,17 +37,18 @@ public class ECSMetaDataReaderIntegrationTest {
     @Test
     void testReadContainerMetaData()  {
         val interceptor = new MockInterceptor();
+        val url = "http://example.com/";
 
         interceptor
                 .addRule()
-                .get(ECSMetaDataReader.ECS_CONTAINER_ENDPOINT_URL)
+                .get(url)
                 .respond(CONTAINER_RESPONSE);
 
         val client = new OkHttpClient.Builder()
                 .addInterceptor(interceptor)
                 .build();
 
-        val uut = new ECSMetaDataReader(client, new ObjectMapper());
+        val uut = new ECSMetaDataReader(url, client, new ObjectMapper());
 
         val result = uut.readContainerMetaData();
 

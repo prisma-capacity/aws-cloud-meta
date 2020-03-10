@@ -16,10 +16,12 @@
 package eu.prismacapacity.aws.cloud.meta.spring.ecs;
 
 import lombok.NonNull;
+import lombok.val;
 import okhttp3.OkHttpClient;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -28,11 +30,12 @@ import eu.prismacapacity.aws.cloud.meta.core.ecs.TaskMetaData;
 
 @Configuration
 public class ECSCloudMetaConfiguration {
-	private final OkHttpClient client = new OkHttpClient();
-
 	@Bean
-	ECSMetaDataReader taskEndpointReader(@NonNull ObjectMapper objectMapper) {
-		return new ECSMetaDataReader(client, objectMapper);
+	ECSMetaDataReader taskEndpointReader(@NonNull ObjectMapper objectMapper, @NonNull Environment env) {
+		val client = new OkHttpClient();
+		val containerMetaDataUri = env.getRequiredProperty("ECS_CONTAINER_METADATA_URI");
+
+		return new ECSMetaDataReader(containerMetaDataUri, client, objectMapper);
 	}
 
 	@Bean

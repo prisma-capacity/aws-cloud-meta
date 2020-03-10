@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.core.env.Environment;
 
 import java.util.Optional;
 
@@ -25,11 +26,16 @@ class ECSCloudMetaConfigurationTest {
     @Mock
     ObjectMapper objectMapper;
 
+    @Mock
+    Environment environment;
+
     @Test
     void testTaskEndpointReader() {
+        when(environment.getRequiredProperty("ECS_CONTAINER_METADATA_URI")).thenReturn("foo");
+
         val uut = new ECSCloudMetaConfiguration();
 
-        val reader = uut.taskEndpointReader(objectMapper);
+        val reader = uut.taskEndpointReader(objectMapper, environment);
 
         assertNotNull(reader);
     }

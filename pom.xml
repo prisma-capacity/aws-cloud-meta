@@ -19,13 +19,13 @@
     <name>PRISMA European Capacity Platform GmbH</name>
     <url>http://www.prisma-capacity.eu</url>
   </organization>
-  <!-- <developers> -->
-  <!-- <developer> -->
-  <!-- <id>uwe.schaefer</id> -->
-  <!-- <name>Uwe Schaefer</name> -->
-  <!-- <email>uwe.schaefer@prisma-capacity.eu</email> -->
-  <!-- </developer> -->
-  <!-- </developers> -->
+  <developers>
+    <developer>
+      <id>otbe</id>
+      <name>Benjamin Otto</name>
+      <email>benjamin.otto@prisma-capacity.eu</email>
+    </developer>
+  </developers>
   <licenses>
     <license>
       <name>The Apache Software License, Version 2.0</name>
@@ -35,15 +35,15 @@
   <!-- Default value, should be overwritten in actual project -->
   <inceptionYear>2020</inceptionYear>
 
-  <!-- <issueManagement> -->
-  <!-- <system>github</system> -->
-  <!-- <url>https://github.com/prisma-capacity/cryptoshred/issues</url> -->
-  <!-- </issueManagement> -->
-  <!-- <scm> -->
-  <!-- <connection>scm:git:http://github.com/prisma-capacity/cryptoshred.git</connection> -->
-  <!-- <developerConnection>scm:git:ssh://github.com/prisma-capacity/cryptoshred.git</developerConnection> -->
-  <!-- <url>https://github.com/prisma-capacity/cryptoshred</url> -->
-  <!-- </scm> -->
+  <issueManagement>
+    <system>github</system>
+    <url>https://github.com/prisma-capacity/aws-cloud-meta/issues</url>
+  </issueManagement>
+  <scm>
+    <connection>scm:git:http://github.com/prisma-capacity/aws-cloud-meta.git</connection>
+    <developerConnection>scm:git:ssh://github.com/prisma-capacity/aws-cloud-meta.git</developerConnection>
+    <url>https://github.com/prisma-capacity/aws-cloud-meta</url>
+  </scm>
 
   <modules>
     <module>aws-cloud-meta-core</module>
@@ -189,12 +189,12 @@
               <pluginExecutions>
                 <pluginExecution>
                   <pluginExecutionFilter>
-                    <groupId> eu.prismacapacity
+                    <groupId>eu.prismacapacity
                     </groupId>
                     <artifactId>
                       unixuid-maven-plugin
                     </artifactId>
-                    <versionRange> [1.0.8,)
+                    <versionRange>[1.0.8,)
                     </versionRange>
                     <goals>
                       <goal>unixuid</goal>
