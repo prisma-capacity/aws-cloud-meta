@@ -1,9 +1,10 @@
 package eu.prismacapacity.aws.cloud.meta.spring.ecs;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import eu.prismacapacity.aws.cloud.meta.core.ecs.ContainerMetaData;
 import eu.prismacapacity.aws.cloud.meta.core.ecs.TaskMetaData;
 import lombok.val;
-import okhttp3.OkHttpClient;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -22,6 +23,9 @@ class ECSCloudMetaConfigurationTest {
 
     @Mock
     TaskMetaData taskMetaData;
+
+    @Mock
+    ContainerMetaData containerMetaData;
 
     @Mock
     ObjectMapper objectMapper;
@@ -59,5 +63,16 @@ class ECSCloudMetaConfigurationTest {
 
         assertThrows(IllegalStateException.class,
                 () -> uut.taskMetaData(ECSMetaDataReader));
+    }
+
+    @Test
+    void testSuccessfulContainerMetaData() {
+        val uut = new ECSCloudMetaConfiguration();
+
+        when(ECSMetaDataReader.readContainerMetaData()).thenReturn(Optional.of(containerMetaData));
+
+        val metaData = uut.containerMetaData(ECSMetaDataReader);
+
+        assertNotNull(metaData);
     }
 }
