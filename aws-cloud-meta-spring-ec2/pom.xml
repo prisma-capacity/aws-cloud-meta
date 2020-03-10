@@ -2,16 +2,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
   <parent>
-    <artifactId>aws-cloud-meta</artifactId>
     <groupId>eu.prismacapacity</groupId>
+    <artifactId>aws-cloud-meta</artifactId>
     <version>1.0-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
-  <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>aws-cloud-meta-spring-boot-autoconfigure</artifactId>
-
+  <artifactId>aws-cloud-meta-spring-ec2</artifactId>
 
   <dependencyManagement>
     <dependencies>
@@ -32,22 +32,16 @@
     </dependency>
 
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-autoconfigure</artifactId>
+      <groupId>eu.prismacapacity</groupId>
+      <artifactId>aws-cloud-meta-core</artifactId>
+      <version>${project.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>eu.prismacapacity</groupId>
-      <artifactId>aws-cloud-meta-spring-ecs</artifactId>
-      <version>${project.version}</version>
-      <optional>true</optional>
-    </dependency>
-
-    <dependency>
-      <groupId>eu.prismacapacity</groupId>
-      <artifactId>aws-cloud-meta-spring-ec2</artifactId>
-      <version>${project.version}</version>
-      <optional>true</optional>
+      <groupId>com.amazonaws</groupId>
+      <artifactId>aws-java-sdk-core</artifactId>
+      <version>1.11.740</version>
     </dependency>
   </dependencies>
+
 </project>

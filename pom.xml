@@ -48,6 +48,7 @@
   <modules>
     <module>aws-cloud-meta-core</module>
     <module>aws-cloud-meta-spring-ecs</module>
+    <module>aws-cloud-meta-spring-ec2</module>
     <module>aws-cloud-meta-spring-boot-autoconfigure</module>
     <module>aws-cloud-meta-spring-boot-starter</module>
   </modules>

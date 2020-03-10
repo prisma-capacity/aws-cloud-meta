@@ -15,7 +15,6 @@
  */
 package eu.prismacapacity.aws.cloud.meta.spring.ecs;
 
-import eu.prismacapacity.aws.cloud.meta.core.ecs.ContainerMetaData;
 import lombok.NonNull;
 import okhttp3.OkHttpClient;
 
@@ -24,6 +23,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import eu.prismacapacity.aws.cloud.meta.core.ecs.ContainerMetaData;
 import eu.prismacapacity.aws.cloud.meta.core.ecs.TaskMetaData;
 
 @Configuration
