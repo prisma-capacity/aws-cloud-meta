@@ -15,20 +15,21 @@
  */
 package eu.prismacapacity.aws.cloud.meta.spring.ec2;
 
-import lombok.RequiredArgsConstructor;
-import lombok.val;
+import javax.annotation.Generated;
 
-import eu.prismacapacity.aws.cloud.meta.core.ec2.InstanceMetaData;
+import com.amazonaws.util.EC2MetadataUtils;
 
-@RequiredArgsConstructor
-public class EC2MetaDataReader {
-	private final EC2Utils utils;
+@Generated("Ignored due to static voodoo")
+public class EC2Utils {
+	String getInstanceId() {
+		return EC2MetadataUtils.getInstanceId();
+	}
 
-	public InstanceMetaData readInstanceMetaData() {
-		val instanceId = utils.getInstanceId();
-		val amiId = utils.getAmiId();
-		val instanceTyp = utils.getInstanceType();
+	String getAmiId() {
+		return EC2MetadataUtils.getAmiId();
+	}
 
-		return new InstanceMetaData(instanceId, amiId, instanceTyp);
+	String getInstanceType() {
+		return EC2MetadataUtils.getInstanceType();
 	}
 }

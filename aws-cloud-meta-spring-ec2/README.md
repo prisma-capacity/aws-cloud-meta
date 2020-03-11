@@ -1,8 +1,8 @@
-# aws-cloud-meta-spring-ecs
+# aws-cloud-meta-spring-ec2
 
 ## Usage (Spring-Boot)
 
-Add the Spring-Boot starter and the ECS module
+Add the Spring-Boot starter and the EC2 module
 ```
 <dependency>
   <groupId>eu.prismacapacity</groupId>
@@ -12,7 +12,7 @@ Add the Spring-Boot starter and the ECS module
 
 <dependency>
   <groupId>eu.prismacapacity</groupId>
-  <artifactId>aws-cloud-meta-spring-ecs</artifactId>
+  <artifactId>aws-cloud-meta-spring-ec2</artifactId>
   <version>VERSION</version>
 </dependency>
 ```
@@ -22,4 +22,4 @@ Add the following property
 aws.cloud.meta.enabled=true
 ```
 
-If you do so Spring-Boot tries to instantiate a `ContainerMetaData` and `TaskMetaData` bean during boot.
+If you do so Spring-Boot tries to instantiate a `InstanceMetaData`.

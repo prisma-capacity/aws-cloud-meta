@@ -16,6 +16,7 @@
 package eu.prismacapacity.aws.cloud.meta.spring.ec2;
 
 import lombok.NonNull;
+import lombok.val;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -27,7 +28,9 @@ import eu.prismacapacity.aws.cloud.meta.core.ec2.InstanceMetaData;
 public class EC2CloudMetaConfiguration {
 	@Bean
 	EC2MetaDataReader ec2MetaDataReader() {
-		return new EC2MetaDataReader();
+		val utils = new EC2Utils();
+
+		return new EC2MetaDataReader(utils);
 	}
 
 	@Bean

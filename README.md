@@ -29,5 +29,5 @@ our logs and metrics to increase visibility and transparency of issues.
 ### Usage for Spring-Boot
 
 Please have a look at the corresponding sub package
-* [ECS](aws-cloud-meta-spring-ecs/)
-* [EC2](aws-cloud-meta-spring-ec2/) 
+* [ECS](aws-cloud-meta-spring-ecs/README.md)
+* [EC2](aws-cloud-meta-spring-ec2/README.md) (untested) 
