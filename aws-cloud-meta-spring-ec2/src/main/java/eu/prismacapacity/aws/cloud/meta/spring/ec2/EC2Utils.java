@@ -15,11 +15,8 @@
  */
 package eu.prismacapacity.aws.cloud.meta.spring.ec2;
 
-import javax.annotation.Generated;
-
 import com.amazonaws.util.EC2MetadataUtils;
 
-@Generated("Ignored due to static voodoo")
 public class EC2Utils {
 	String getInstanceId() {
 		return EC2MetadataUtils.getInstanceId();
