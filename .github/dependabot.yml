@@ -12,7 +12,7 @@ updates:
 #    allowed_updates:
 #      - match:
 #          update_type: "security"
-    automerged_updates:
-      - match:
-          dependency_type: "all"
-          update_type: "semver:minor"
+#    automerged_updates:
+#      - match:
+#          dependency_type: "all"
+#          update_type: "semver:minor"
