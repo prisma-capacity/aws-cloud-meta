@@ -6,7 +6,7 @@
   <parent>
     <groupId>eu.prismacapacity</groupId>
     <artifactId>basepom-oss</artifactId>
-    <version>0.1.6</version>
+    <version>0.1.10</version>
   </parent>
 
   <artifactId>aws-cloud-meta</artifactId>
@@ -139,7 +139,7 @@
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.8.5</version>
+        <version>0.8.7</version>
         <executions>
           <execution>
             <id>prepare-agent</id>
