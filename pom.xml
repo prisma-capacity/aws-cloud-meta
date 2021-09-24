@@ -209,6 +209,17 @@
             </lifecycleMappingMetadata>
           </configuration>
         </plugin>
+
+        <plugin>
+          <groupId>com.amashchenko.maven.plugin</groupId>
+          <artifactId>gitflow-maven-plugin</artifactId>
+          <version>1.16.0</version>
+          <configuration>
+            <gitFlowConfig>
+              <developmentBranch>master</developmentBranch>
+            </gitFlowConfig>
+          </configuration>
+        </plugin>
       </plugins>
     </pluginManagement>
   </build>
