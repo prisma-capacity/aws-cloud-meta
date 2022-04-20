@@ -61,7 +61,7 @@
     <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
     <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
     <jersey-client.version>1.18.6</jersey-client.version>
-    <jackson.version>2.13.1</jackson.version>
+    <jackson.version>2.13.2</jackson.version>
     <slf4j.version>1.7.30</slf4j.version>
     <spring-boot.version>2.5.5</spring-boot.version>
     <dependency-check.skip>true</dependency-check.skip>
@@ -101,7 +101,7 @@
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-junit-jupiter</artifactId>
-      <version>4.3.1</version>
+      <version>4.5.0</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -137,7 +137,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-failsafe-plugin</artifactId>
-        <version>3.0.0-M5</version>
+        <version>3.0.0-M6</version>
         <configuration>
           <groups>it</groups>
         </configuration>
@@ -174,7 +174,7 @@
       <plugin>
         <groupId>com.amashchenko.maven.plugin</groupId>
         <artifactId>gitflow-maven-plugin</artifactId>
-        <version>1.17.0</version>
+        <version>1.18.0</version>
         <configuration>
           <gitFlowConfig>
             <developmentBranch>master</developmentBranch>
@@ -218,7 +218,7 @@
         <plugin>
           <groupId>com.amashchenko.maven.plugin</groupId>
           <artifactId>gitflow-maven-plugin</artifactId>
-          <version>1.17.0</version>
+          <version>1.18.0</version>
           <configuration>
             <gitFlowConfig>
               <developmentBranch>master</developmentBranch>
