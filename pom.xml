@@ -11,7 +11,7 @@
 
   <artifactId>aws-cloud-meta</artifactId>
   <packaging>pom</packaging>
-  <version>1.0.5-SNAPSHOT</version>
+  <version>1.0.5</version>
   <name>aws-cloud-meta</name>
 
   <url>https://github.com/prisma-capacity</url>
