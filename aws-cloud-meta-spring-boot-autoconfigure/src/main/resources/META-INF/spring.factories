@@ -1,4 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  eu.prismacapacity.aws.cloud.meta.spring.boot.autoconfiguration.ECSCloudMetaAutoConfiguration,\
-  eu.prismacapacity.aws.cloud.meta.spring.boot.autoconfiguration.EC2CloudMetaAutoConfiguration\
-  
