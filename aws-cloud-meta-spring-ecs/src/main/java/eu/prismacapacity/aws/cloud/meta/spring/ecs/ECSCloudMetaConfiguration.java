@@ -19,6 +19,7 @@ import lombok.NonNull;
 import lombok.val;
 import okhttp3.OkHttpClient;
 
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
@@ -31,6 +32,7 @@ import eu.prismacapacity.aws.cloud.meta.core.ecs.TaskMetaData;
 @Configuration
 public class ECSCloudMetaConfiguration {
 	@Bean
+	@ConditionalOnMissingBean
 	ECSMetaDataReader taskEndpointReader(@NonNull ObjectMapper objectMapper, @NonNull Environment env) {
 		val client = new OkHttpClient();
 		val containerMetaDataUri = env.getRequiredProperty("ECS_CONTAINER_METADATA_URI");
@@ -39,12 +41,14 @@ public class ECSCloudMetaConfiguration {
 	}
 
 	@Bean
+	@ConditionalOnMissingBean
 	TaskMetaData taskMetaData(@NonNull ECSMetaDataReader metaDataReader) {
 		return metaDataReader.readTaskMetaData()
 				.orElseThrow(() -> new IllegalStateException("Couldn't load ECS task meta data"));
 	}
 
 	@Bean
+	@ConditionalOnMissingBean
 	ContainerMetaData containerMetaData(@NonNull ECSMetaDataReader metaDataReader) {
 		return metaDataReader.readContainerMetaData()
 				.orElseThrow(() -> new IllegalStateException("Couldn't load ECS container meta data"));
