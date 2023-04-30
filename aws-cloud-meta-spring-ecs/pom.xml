@@ -54,6 +54,7 @@
       <groupId>com.github.gmazzo</groupId>
       <artifactId>okhttp-mock</artifactId>
       <version>1.5.0</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 
