@@ -30,4 +30,11 @@ our logs and metrics to increase visibility and transparency of issues.
 
 Please have a look at the corresponding sub package
 * [ECS](aws-cloud-meta-spring-ecs/README.md)
-* [EC2](aws-cloud-meta-spring-ec2/README.md) (untested) 
+* [EC2](aws-cloud-meta-spring-ec2/README.md) 
+
+### Spring Boot Compatibility
+
+| Library version | Spring Boot version |
+|-----------------|---------------------|
+| 1.x.x           | 2.7+                |
+| 2.x.x           | 3.1+                |

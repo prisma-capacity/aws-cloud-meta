@@ -15,7 +15,7 @@
  */
 package eu.prismacapacity.aws.cloud.meta.spring.ec2;
 
-import com.amazonaws.util.EC2MetadataUtils;
+import software.amazon.awssdk.regions.internal.util.EC2MetadataUtils;
 
 public class EC2Utils {
 	String getInstanceId() {
