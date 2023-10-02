@@ -28,9 +28,6 @@ class ECSCloudMetaConfigurationTest {
     ContainerMetaData containerMetaData;
 
     @Mock
-    ObjectMapper objectMapper;
-
-    @Mock
     Environment environment;
 
     @Test
@@ -39,7 +36,7 @@ class ECSCloudMetaConfigurationTest {
 
         val uut = new ECSCloudMetaConfiguration();
 
-        val reader = uut.taskEndpointReader(objectMapper, environment);
+        val reader = uut.taskEndpointReader(environment);
 
         assertNotNull(reader);
     }

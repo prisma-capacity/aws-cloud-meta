@@ -33,11 +33,11 @@ import eu.prismacapacity.aws.cloud.meta.core.ecs.TaskMetaData;
 public class ECSCloudMetaConfiguration {
 	@Bean
 	@ConditionalOnMissingBean
-	ECSMetaDataReader taskEndpointReader(@NonNull ObjectMapper objectMapper, @NonNull Environment env) {
+	ECSMetaDataReader taskEndpointReader(@NonNull Environment env) {
 		val client = new OkHttpClient();
 		val containerMetaDataUri = env.getRequiredProperty("ECS_CONTAINER_METADATA_URI");
 
-		return new ECSMetaDataReader(containerMetaDataUri, client, objectMapper);
+		return new ECSMetaDataReader(containerMetaDataUri, client, new ObjectMapper());
 	}
 
 	@Bean
